@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures":  {
+    "all": "pigmano:block/reinforced_concrete"
+  }
+}
