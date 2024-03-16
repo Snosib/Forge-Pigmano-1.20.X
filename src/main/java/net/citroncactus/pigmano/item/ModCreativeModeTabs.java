@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.tusk.get());
 
                         pOutput.accept(ModBlocks.reinforced_concrete.get());
+                        pOutput.accept(ModBlocks.low_density_structures.get());
 
                     })
                     .build()) ;

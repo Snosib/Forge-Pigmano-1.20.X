@@ -1,6 +1,8 @@
 package net.citroncactus.pigmano.item;
 
 import net.citroncactus.pigmano.Pigmano;
+import net.citroncactus.pigmano.block.ModBlocks;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,6 +18,11 @@ public class ModItems {
     public static final RegistryObject<Item> tusk = ITEMS.register("tusk",
             () -> new Item(new Item.Properties())) ;
 
+
+    public static final RegistryObject<Item> reinforced_concrete = ITEMS.register("reinforced_concrete",
+            () -> new BlockItem(ModBlocks.reinforced_concrete.get(), new Item.Properties()));
+    public static final RegistryObject<Item> low_density_structures = ITEMS.register("low_density_structures",
+            () -> new BlockItem(ModBlocks.low_density_structures.get(), new Item.Properties()));
     public static void  register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

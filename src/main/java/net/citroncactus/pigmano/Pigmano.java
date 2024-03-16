@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.citroncactus.pigmano.block.ModBlocks;
 import net.citroncactus.pigmano.item.ModCreativeModeTabs;
 import net.citroncactus.pigmano.item.ModItems;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;

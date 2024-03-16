@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "S#S",
+    "# #",
+    "S#S"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "pigmano:low_density_structures"
+  }
+}

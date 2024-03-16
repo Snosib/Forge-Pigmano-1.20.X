@@ -1,0 +1,10 @@
+{
+  "render_type": "minecraft:cutout_mipped",
+  "parent": "block/cube_all",
+  "textures": {
+     "all": "pigmano:block/low_density_structures"
+  }
+}
+
+
+

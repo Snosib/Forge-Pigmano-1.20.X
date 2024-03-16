@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "pigmano:low_density_structures"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "pigmano:blocks/low_density_structures"
+}

@@ -3,6 +3,7 @@
   "item.pigmano.tusk" : "Tusk",
 
   "block.pigmano.reinforced_concrete": "Reinforced Concrete",
+  "blocks.pigmano.low_density_structures": "Low Density Structures",
 
-  "creativetab.pigmano_tab": "PIGMANO"
+  "creativetab.pigmano_tab": "Pigmano"
 }
