@@ -2,8 +2,11 @@ package net.citroncactus.pigmano;
 
 import com.mojang.logging.LogUtils;
 import net.citroncactus.pigmano.block.ModBlocks;
+import net.citroncactus.pigmano.entity.ModEntities;
+import net.citroncactus.pigmano.entity.client.PigmanipedeRenderer;
 import net.citroncactus.pigmano.item.ModCreativeModeTabs;
 import net.citroncactus.pigmano.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -34,6 +37,8 @@ public class Pigmano {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModEntities.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -51,6 +56,7 @@ public class Pigmano {
         }
     }
 
+
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
@@ -62,6 +68,7 @@ public class Pigmano {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.PIGMANIPEDE.get(), PigmanipedeRenderer::new);
 
         }
     }

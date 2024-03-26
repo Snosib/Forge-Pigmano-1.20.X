@@ -1,9 +1,10 @@
 {
   "item.pigmano.putrid_pork" : "Putrid Pork",
   "item.pigmano.tusk" : "Tusk",
+  "item.pigmano.flogger" : "Flogger",
 
   "block.pigmano.reinforced_concrete": "Reinforced Concrete",
-  "blocks.pigmano.low_density_structures": "Low Density Structures",
+  "block.pigmano.low_density_structures": "Low Density Structures",
 
   "creativetab.pigmano_tab": "Pigmano"
 }

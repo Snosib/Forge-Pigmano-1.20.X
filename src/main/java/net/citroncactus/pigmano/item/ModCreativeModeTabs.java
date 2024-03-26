@@ -21,8 +21,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.putrid_pork.get());
                         pOutput.accept(ModItems.tusk.get());
 
+                        pOutput.accept(ModItems.flogger.get());
+
                         pOutput.accept(ModBlocks.reinforced_concrete.get());
                         pOutput.accept(ModBlocks.low_density_structures.get());
+
+                        pOutput.accept(ModItems.PIGMANIPEDE_SPAWN_EGG.get());
 
                     })
                     .build()) ;

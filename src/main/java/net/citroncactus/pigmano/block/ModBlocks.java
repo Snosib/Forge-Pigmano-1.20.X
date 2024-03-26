@@ -29,7 +29,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).strength(-1.0F, 6.0F)));
 
     public static final RegistryObject<Block> low_density_structures = registerBlock("low_density_structures",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0F, 12.0F)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).strength(1.0F, 12.0F).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().sound(SoundType.METAL)));
 
 
    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
@@ -43,7 +43,13 @@ public class ModBlocks {
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
-
+    public boolean isFullyOpaque(BlockState state)
+    {
+        return false;
+    }
+    public boolean isOpaqueCube(BlockState state) {
+        return false;
+    }
 }
 
 
