@@ -31,8 +31,8 @@ public class PigmanipedeEntity extends Spider {
         this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(2, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 11.0F));
-        this.targetSelector.addGoal(4, new PigmanipedeEntity.SpiderTargetGoal<>(this, Player.class));
-        this.targetSelector.addGoal(5, new PigmanipedeEntity.SpiderTargetGoal<>(this, IronGolem.class));
+        this.targetSelector.addGoal(1, new PigmanipedeEntity.SpiderTargetGoal<>(this, Player.class));
+        this.targetSelector.addGoal(2, new PigmanipedeEntity.SpiderTargetGoal<>(this, IronGolem.class));
 
     }
 
@@ -84,7 +84,7 @@ public class PigmanipedeEntity extends Spider {
 
         }
         @Override
-        public boolean canContinueToUse() {
+        public boolean canUse() {
             return super.canContinueToUse();
 
         }
