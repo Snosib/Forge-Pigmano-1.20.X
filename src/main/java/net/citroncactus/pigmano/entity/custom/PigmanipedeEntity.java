@@ -19,6 +19,8 @@ import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
+import java.lang.annotation.Target;
+
 
 public class PigmanipedeEntity extends Spider {
     public PigmanipedeEntity(EntityType<? extends Spider> pEntityType, Level pLevel) {
@@ -27,12 +29,13 @@ public class PigmanipedeEntity extends Spider {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 0.8D));
-        this.goalSelector.addGoal(2, new LeapAtTargetGoal(this, 0.4F));
-        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 11.0F));
-        this.targetSelector.addGoal(1, new PigmanipedeEntity.SpiderTargetGoal<>(this, Player.class));
-        this.targetSelector.addGoal(2, new PigmanipedeEntity.SpiderTargetGoal<>(this, IronGolem.class));
+        this.goalSelector.addGoal(1, new FloatGoal(this));
+        this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 0.8D));
+
+        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, IronGolem.class, false));
 
     }
 
@@ -73,23 +76,10 @@ public class PigmanipedeEntity extends Spider {
         return Spider.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 12)
                 .add(Attributes.ATTACK_DAMAGE, 3)
-                .add(Attributes.MOVEMENT_SPEED, 0.15)
-                .add(Attributes.FOLLOW_RANGE, 50D) ;
+                .add(Attributes.MOVEMENT_SPEED, 0.7f)
+                .add(Attributes.FOLLOW_RANGE, 32.0D);
+
     }
-
-    static class SpiderTargetGoal<T extends LivingEntity> extends NearestAttackableTargetGoal<T> {
-        public SpiderTargetGoal(Spider pSpider, Class<T> pEntityTypeToTarget) {
-            super(pSpider, pEntityTypeToTarget, false);
-
-
-        }
-        @Override
-        public boolean canUse() {
-            return super.canContinueToUse();
-
-        }
-    }
-
     @Override
     protected SoundEvent getAmbientSound() {
         return SoundEvents.PIGLIN_AMBIENT;
@@ -103,3 +93,5 @@ public class PigmanipedeEntity extends Spider {
         return SoundEvents.PIGLIN_DEATH;
     }
 }
+
+
